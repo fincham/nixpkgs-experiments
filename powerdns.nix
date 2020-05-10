@@ -60,10 +60,12 @@ in {
         # to allow pre-"config" installations to still function, if extraConfig is set
         # then specify no default config here
         default = if cfg.extraConfig != null then {} else {
-            launch = "bind";
+          launch = "bind";
         };
         example = {
-            launch = "bind";
+          launch = "gsqlite3";
+          gsqlite3-database = "/srv/dns/powerdns.sqlite3";
+          gsqlite3-dnssec = true;
         };
         description = "Configuration for pdns_server";
       };
